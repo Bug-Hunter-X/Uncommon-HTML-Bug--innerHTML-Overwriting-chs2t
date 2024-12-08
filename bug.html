@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+  <script>
+    // Incorrect use of innerHTML, leading to unexpected behavior
+    document.getElementById('myDiv').innerHTML = '<p>This is a paragraph.</p>';
+    document.getElementById('myDiv').innerHTML += '<p>This is another paragraph.</p>';
+    //The innerHTML property overwrites all previous HTML content when assigned and does not append to previous content. So only the second paragraph is displayed.  
+  </script>
+</body>
+</html>
